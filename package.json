@@ -1,0 +1,23 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  },
+  "name": "bring-your-child",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/microna/bring-your-child.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/microna/bring-your-child/issues"
+  },
+  "homepage": "https://github.com/microna/bring-your-child#readme",
+  "description": ""
+}

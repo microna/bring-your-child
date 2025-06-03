@@ -15,47 +15,42 @@
         <a class="skip-link screen-reader-text"
             href="#primary"><?php esc_html_e('Skip to content', 'bring-your-child'); ?></a>
 
-        <header id="masthead" class="site-header">
-            <div class="header-content">
-                <div class="site-branding">
+        <!-- Tailwind Test - Remove after confirming it works -->
+        <div class="bg-green-500 text-white p-4 text-center font-bold">
+            🎉 Local Tailwind CSS is working! This should be green with white text.
+        </div>
+
+        <header id="masthead" class="site-header bg-blue-500 text-white p-4 shadow-lg">
+            <div class="header-content max-w-6xl mx-auto flex items-center justify-between">
+                <div class="site-branding flex items-center space-x-4">
                     <?php if (has_custom_logo()) : ?>
                     <div class="site-logo">
                         <?php the_custom_logo(); ?>
                     </div>
                     <?php endif; ?>
 
-                    <div class="site-title-wrapper">
-                        <?php if (is_front_page() && is_home()) : ?>
-                        <h1 class="site-title"><a
-                                href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
-                        <?php else : ?>
-                        <p class="site-title"><a
-                                href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></p>
-                        <?php endif; ?>
 
-                        <?php $description = get_bloginfo('description', 'display'); ?>
-                        <?php if ($description || is_customize_preview()) : ?>
-                        <p class="site-description"><?php echo $description; ?></p>
-                        <?php endif; ?>
-                    </div>
                 </div><!-- .site-branding -->
 
                 <?php if (has_nav_menu('primary')) : ?>
                 <nav id="site-navigation" class="main-navigation"
                     aria-label="<?php esc_attr_e('Primary Menu', 'bring-your-child'); ?>">
-                    <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-                        <span class="menu-toggle-text"><?php esc_html_e('Menu', 'bring-your-child'); ?></span>
-                        <span class="menu-icon">
-                            <span></span>
-                            <span></span>
-                            <span></span>
+                    <button
+                        class="menu-toggle bg-white text-blue-500 px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors md:hidden"
+                        aria-controls="primary-menu" aria-expanded="false">
+                        <span
+                            class="menu-toggle-text font-medium"><?php esc_html_e('Menu', 'bring-your-child'); ?></span>
+                        <span class="menu-icon ml-2">
+                            <span class="block w-5 h-0.5 bg-blue-500 mb-1"></span>
+                            <span class="block w-5 h-0.5 bg-blue-500 mb-1"></span>
+                            <span class="block w-5 h-0.5 bg-blue-500"></span>
                         </span>
                     </button>
                     <?php
                     wp_nav_menu(array(
                         'theme_location' => 'primary',
                         'menu_id'        => 'primary-menu',
-                        'menu_class'     => 'primary-menu',
+                        'menu_class'     => 'primary-menu hidden md:flex space-x-6',
                         'container'      => false,
                     ));
                     ?>

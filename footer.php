@@ -4,18 +4,6 @@
     <footer id="colophon" class="site-footer">
         <div class="footer-content">
             <div class="footer-info">
-                <div class="footer-logo">
-                    <?php if (has_custom_logo()) : ?>
-                    <?php the_custom_logo(); ?>
-                    <?php else : ?>
-                    <h2 class="site-title"><a
-                            href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h2>
-                    <?php endif; ?>
-                </div>
-
-                <div class="footer-description">
-                    <p><?php bloginfo('description'); ?></p>
-                </div>
             </div>
 
             <?php if (has_nav_menu('footer')) : ?>
