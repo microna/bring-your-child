@@ -1,49 +1,42 @@
 <?php
-/**
- * Bring Your Child Theme functions and definitions
- */
-
+// Enqueue styles and scripts
 function bring_your_child_enqueue_assets() {
-    // Enqueue Tailwind CSS (local version)
-    wp_enqueue_style(
-        'tailwind-css',
-        get_template_directory_uri() . '/assets/css/tailwind.css',
-        array(),
-        wp_get_theme()->get('Version')
-    );
-   
+    // Enqueue main stylesheet
     wp_enqueue_style(
         'bring-your-child-style',
         get_stylesheet_uri(),
-        array('tailwind-css'),
+        array(),
         wp_get_theme()->get('Version')
     );
     
+  
+    
+    // Enqueue main JavaScript file
     wp_enqueue_script(
         'bring-your-child-script',
-        get_template_directory_uri() . '/js/script.js',
-        array('jquery'),
+        get_template_directory_uri() . 'main.js',
+        array(),
         wp_get_theme()->get('Version'),
-        true
+        true // Load in footer
     );
 }
 add_action('wp_enqueue_scripts', 'bring_your_child_enqueue_assets');
 
-function bring_your_child_theme_setup() {
-    add_theme_support('post-thumbnails');
+// Add theme support
+function bring_your_child_theme_support() {
+    // Add title tag support
     add_theme_support('title-tag');
-    add_theme_support('custom-logo');
+    
+    // Add post thumbnail support
+    add_theme_support('post-thumbnails');
+    
+    // Add HTML5 support
     add_theme_support('html5', array(
         'search-form',
         'comment-form',
         'comment-list',
         'gallery',
-        'caption',
-    ));
-    
-    register_nav_menus(array(
-        'primary' => esc_html__('Primary Menu', 'bring-your-child'),
-        'footer' => esc_html__('Footer Menu', 'bring-your-child'),
+        'caption'
     ));
 }
-add_action('after_setup_theme', 'bring_your_child_theme_setup');
+add_action('after_setup_theme', 'bring_your_child_theme_support');
