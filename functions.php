@@ -4,14 +4,14 @@
  */
 
 function bring_your_child_enqueue_assets() {
-    // Enqueue Tailwind CSS via CDN (temporary for testing)
+    // Enqueue Tailwind CSS (local version)
     wp_enqueue_style(
         'tailwind-css',
-        'https://cdn.tailwindcss.com',
+        get_template_directory_uri() . '/assets/css/tailwind.css',
         array(),
-        '3.4.0'
+        wp_get_theme()->get('Version')
     );
-    
+   
     wp_enqueue_style(
         'bring-your-child-style',
         get_stylesheet_uri(),

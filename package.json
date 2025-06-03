@@ -1,23 +1,30 @@
 {
-  "devDependencies": {
-    "tailwindcss": "^3.4.17"
-  },
   "name": "bring-your-child",
   "version": "1.0.0",
+  "description": "WordPress theme for bring your child website",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/tailwind.css",
+    "watch-css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/tailwind.css --watch",
+    "build": "npm run build-css",
+    "dev": "npm run watch-css"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/microna/bring-your-child.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "wordpress",
+    "theme",
+    "tailwindcss"
+  ],
+  "author": "Stas Shok",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/microna/bring-your-child/issues"
   },
   "homepage": "https://github.com/microna/bring-your-child#readme",
-  "description": ""
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
 }
